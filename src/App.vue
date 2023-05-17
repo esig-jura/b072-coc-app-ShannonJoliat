@@ -2,6 +2,7 @@
 // Cheat Sheet: https://steve-fallet.notion.site/Vue-3-script-setup-Cheat-Sheet-b12192ceae244ecda65f771579ca02bc
 import {reactive, ref} from 'vue'
 import PageTopBarre from "@/components/PageTopBarre.vue";
+import PageHeader from "@/components/PageHeader.vue";
 
 //Datas statiques
 const titre = 'Clash of Clans'
@@ -85,13 +86,8 @@ function formerTroupe(coutFormation) {
 
 <template>
         <PageTopBarre :or="totalOr"></PageTopBarre>
-        <header>
-            <h1>{{ titre.value }}</h1>
-            <p class="description"> {{ description }}</p>
-            <a :href="site">
-                <button>Site officiel</button>
-            </a>
-        </header>
+        <PageHeader :titre="titre" :description="description" :site="site"></PageHeader>
+
         <main>
             <ul class="cartes">
                 <li v-for="troupe in troupes" :key="troupe.id">
