@@ -3,6 +3,7 @@
 import {reactive, ref} from 'vue'
 import PageTopBarre from "@/components/PageTopBarre.vue";
 import PageHeader from "@/components/PageHeader.vue";
+import PageFooter from "@/components/PageFooter.vue";
 
 //Datas statiques
 const titre = 'Clash of Clans'
@@ -113,7 +114,6 @@ function formerTroupe(coutFormation) {
                         <p class="description">
                             {{ troupe.description }}
                         </p>
-
                         <footer >
                             <div class="training" :style="`background-color: ${ troupe.couleur }`">
                                 <div v-if="troupe.formation > 60">
@@ -140,12 +140,7 @@ function formerTroupe(coutFormation) {
                 </li>
             </ul>
         </main>
-        <footer>
-            &copy; 2023 -
-            <a :href="site">
-                Supercell.com
-            </a>
-        </footer>
+        <PageFooter :site="site"></PageFooter>
 </template>
 
 <style scoped lang="sass">
